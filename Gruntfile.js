@@ -6,15 +6,13 @@ var baseDir  = 'src/img_source',   // <-- Set to your SVG base directory
    config       = {
       "dest": "src",
       "mode": {
-         "css": {
-            "dest": "styles",
-            "common": "svg-icon",
-            "example": true
-         },
          "symbol": {
             "dest": "img",
-            "inline": true,
-            "example": true
+            "inline": false,
+            "example": true,
+            "render"			: {
+               "css"		: true		// Render a Sass stylesheet
+            }
          }
       }
    };
