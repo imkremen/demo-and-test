@@ -3,8 +3,35 @@
    <head lang="en">
       <meta charset="UTF-8">
       <title></title>
+      <style type="text/css">
+         svg {
+           width: 24px;
+           height: 24px;
+           fill: red;
+         }
+      </style>
    </head>
    <body>
       <a href="src/img/sprite.symbol.html">exapmle</a>
+      
+      <svg svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></use>
+      </svg>
+      
+      <script>
+          var data = '<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" width="0" height="0">'+
+              '<symbol viewBox="0 0 24 24" id="ic_accessibility_24px"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"></path></symbol>'+
+              '<symbol viewBox="0 0 24 24" id="ic_pageview_24px"><path d="M11.5 9a2.5 2.5 0 0 0 0 5 2.5 2.5 0 0 0 0-5zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-3.21 14.21l-2.91-2.91c-.69.44-1.51.7-2.39.7C9.01 16 7 13.99 7 11.5S9.01 7 11.5 7 16 9.01 16 11.5c0 .88-.26 1.69-.7 2.39l2.91 2.9-1.42 1.42z"></path></symbol>'+
+              '</svg>';
+
+          var DOMURL = window.URL || window.webkitURL || window;
+
+          var sprite = new Blob([data], {type: 'image/svg+xml'});
+          var url = DOMURL.createObjectURL(sprite);
+
+          var use = document.querySelector('use');
+
+          use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', url+'#ic_accessibility_24px');
+       </script>
    </body>
 </html>
