@@ -19,5 +19,8 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-svg-sprite": "^1.3.6"
+  },
+  "dependencies": {
+    "svgxuse": "^1.2.6"
   }
 }
